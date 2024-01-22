@@ -36,5 +36,12 @@ $(function () {
       }
     });
   }
+  //gets user input from local storage and sets textarea vallue
+  $('.time-block').each(function() {
+    const key = $(this).attr('id');
+    const value = localStorage.getItem(key);
+    $(this).children('.description').val(value);
+  })
+  //function to create current time display
   
 });
