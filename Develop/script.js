@@ -15,4 +15,13 @@ $(function () {
       $(this).toggleClass('future', blockHour > currentHour);
     });
   }
+  //Save user input in text area when button is clicked
+  function textEntry() {
+    $('.saveBtn').on('click', function() {
+      const key = $(this).parent().attr('id');
+      const value = $(this).siblings('.description').val();
+      localStorage.setItem(key, value);
+    })
+  }
+  //refresh color of block according to the current time
 });
